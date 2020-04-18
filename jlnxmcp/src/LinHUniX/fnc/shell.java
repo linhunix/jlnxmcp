@@ -20,7 +20,7 @@ public class shell {
         if (ver.equals("null")) {
             ver = "0.0.1";
         }
-        headerdata = lnxmcp.as().loadcommonfile("resources/Shell_Header.txt");
+        headerdata = lnxmcp.as().LoadCommonFile("resources/Shell_Header.txt");
         if (headerdata != null) {
             headerdata = headerdata.replace("{{version}}", ver);
         }

@@ -21,6 +21,7 @@ public class mastercontrolprogram {
 
     public mastercontrolprogram() {
         this.config=new HashMap<String, Object>();
+        this.config=LoadConfig(this.config);
     }
 
     /**
@@ -82,11 +83,28 @@ public class mastercontrolprogram {
             mcpLogging.critical(message);
         }
     }
-    
-    public String loadfile(String Name){
-        return loadFile(Name);
+    ////////////////////////////////////////////////////////////////////////////
+    ///loadConfigComponent 
+    ////////////////////////////////////////////////////////////////////////////
+    public String LoadFile(String Name){
+        return mcpLoadFile(Name);
     }
-    public String loadcommonfile(String Name){
-        return loadCommonFile(Name);
+    public String LoadCommonFile(String Name){
+        return mcpLoadCommonFile(Name);
     }
+    public void WriteFile(String Name, String Content){
+        mcpWriteFile(Content, Name);
+    }
+    public String Json2String(Map<String,Object>In){
+        return mcpJson2String(In);
+    }
+    public Map<String,Object> String2Json (String In){
+        return mcpString2Json(In);
+    }
+    public Map<String,Object> GetJsonFile(String filename){
+        return mcpReadJsonFile(filename);
+    }
+   public void PutJsonFile(String filename, Map<String,Object> content){
+       mcpSaveJsonFile(filename, content);
+   }
 }
